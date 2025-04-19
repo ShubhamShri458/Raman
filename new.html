@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Biodata - Raman Sharma</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --primary-color: #e67e22;
+      --accent-color: #f39c12;
+      --heading-color: #b03a2e;
+      --bg-gradient: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+      background: var(--bg-gradient);
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      animation: fadeInZoom 1.2s ease forwards;
+    }
+
+    @keyframes fadeInZoom {
+      0% { opacity: 0; transform: scale(0.85); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    header h1 {
+      text-align: center;
+      font-size: 30px;
+      color: var(--heading-color);
+      margin-bottom: 30px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      color: var(--primary-color);
+      font-weight: bold;
+      border-left: 5px solid var(--accent-color);
+      padding-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      font-size: 16px;
+      margin: 5px 0;
+      color: #333;
+    }
+
+    .info span[contenteditable] {
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .info span.editing {
+      outline: 1px dashed #999;
+      background-color: #fef9e7;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .buttons button {
+      padding: 10px 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #cf711c;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="container" id="biodata">
+    <header>
+      <h1 id="main-title">विवाह हेतु बायोडाटा</h1>
+    </header>
+
+    <section>
+      <div class="section-title" data-hi="व्यक्तिगत जानकारी" data-en="Personal Information">व्यक्तिगत जानकारी</div>
+      <div class="info">
+        <p><span data-hi="नाम" data-en="Name">नाम</span>: <span contenteditable="false">रमन शर्मा</span></p>
+        <p><span data-hi="जन्मतिथि" data-en="Date of Birth">जन्मतिथि</span>: <span contenteditable="false">02 अप्रैल 2001</span></p>
+        <p><span data-hi="उम्र" data-en="Age">उम्र</span>: <span contenteditable="false">24 वर्ष (लगभग)</span></p>
+        <p><span data-hi="धर्म" data-en="Religion">धर्म</span>: <span contenteditable="false">हिन्दू</span></p>
+        <p><span data-hi="जाति" data-en="Caste">जाति</span>: <span contenteditable="false">ब्राह्मण</span></p>
+        <p><span data-hi="गोत्र" data-en="Gotra">गोत्र</span>: <span contenteditable="false">खुद - दिगरहा, मामा - मरैया, नानी - उपाध्याय, दादी - समाधिया</span></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-hi="शिक्षा" data-en="Education">शिक्षा</div>
+      <div class="info">
+        <p><span contenteditable="false">एम.एससी. (गणित)</span></p>
+        <p><span contenteditable="false">डी.एड.</span></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-hi="व्यवसाय / कार्य" data-en="Occupation / Work">व्यवसाय / कार्य</div>
+      <div class="info">
+        <p><span contenteditable="false">वर्तमान स्थिति: अध्ययनरत</span></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-hi="परिवार की जानकारी" data-en="Family Details">परिवार की जानकारी</div>
+      <div class="info">
+        <p><span data-hi="दादा जी का नाम" data-en="Grandfather's Name">दादा जी का नाम</span>: <span contenteditable="false">लक्ष्मीनारायण शर्मा</span></p>
+        <p><span data-hi="पिता का नाम" data-en="Father's Name">पिता का नाम</span>: <span contenteditable="false">बांकेलाल शर्मा</span></p>
+        <p><span data-hi="पिता का व्यवसाय" data-en="Father's Occupation">पिता का व्यवसाय</span>: <span contenteditable="false">व्यवसायी</span></p>
+        <p><span data-hi="माता का नाम" data-en="Mother's Name">माता का नाम</span>: <span contenteditable="false">सुमन शर्मा</span></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title" data-hi="संपर्क विवरण" data-en="Contact Information">संपर्क विवरण</div>
+      <div class="info">
+        <p><span data-hi="संपर्क व्यक्ति" data-en="Contact Person">संपर्क व्यक्ति</span>: <span contenteditable="false">पिता जी</span></p>
+        <p><span data-hi="मोबाइल नंबर" data-en="Mobile Number">मोबाइल नंबर</span>: <span contenteditable="false">8839369880</span></p>
+        <p><span data-hi="पता" data-en="Address">पता</span>: <span contenteditable="false">एम.एस. रोड, न्यू कोर्ट के पास, जवाहर नगर, जौरा, मुरैना, मध्य प्रदेश</span></p>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <button id="editBtn" onclick="toggleEdit()">संपादन प्रारंभ करें</button>
+      <button onclick="downloadPDF()">डाउनलोड PDF</button>
+      <button onclick="toggleLanguage()" id="langBtn">Convert to English</button>
+    </div>
+  </main>
+
+  <script>
+    let isEditing = false;
+    let isHindi = true;
+
+    function toggleEdit() {
+      const spans = document.querySelectorAll('[contenteditable]');
+      const button = document.getElementById('editBtn');
+      isEditing = !isEditing;
+      spans.forEach(span => {
+        span.contentEditable = isEditing;
+        span.classList.toggle('editing', isEditing);
+      });
+      button.textContent = isEditing ? "संपादन सहेजें" : "संपादन प्रारंभ करें";
+    }
+
+    function downloadPDF() {
+      const element = document.getElementById('biodata');
+      html2pdf().from(element).set({
+        margin: 0.5,
+        filename: isHindi ? 'रमन_शर्मा_बायोडाटा.pdf' : 'Raman_Sharma_Biodata.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      }).save();
+    }
+
+    function toggleLanguage() {
+      const titles = document.querySelectorAll('[data-hi]');
+      titles.forEach(el => {
+        el.textContent = isHindi ? el.getAttribute('data-en') : el.getAttribute('data-hi');
+      });
+
+      document.getElementById('main-title').textContent = isHindi ? "Biodata for Marriage" : "विवाह हेतु बायोडाटा";
+      document.getElementById('editBtn').textContent = isHindi ? "Start Editing" : "संपादन प्रारंभ करें";
+      document.getElementById('langBtn').textContent = isHindi ? "Convert to Hindi" : "Convert to English";
+
+      isHindi = !isHindi;
+    }
+  </script>
+</body>
+  </html>
