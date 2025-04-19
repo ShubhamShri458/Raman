@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>रमन शर्मा विवाह बायोडाटा</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans Devanagari', 'Arial', sans-serif;
+            background: linear-gradient(to right, #fceabb, #f8b500);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 100%;
+            max-width: 850px;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease forwards;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b3541e;
+            margin-bottom: 30px;
+            font-size: 26px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .section {
+            margin-bottom: 25px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.3s; }
+        .section:nth-child(3) { animation-delay: 0.6s; }
+        .section:nth-child(4) { animation-delay: 0.9s; }
+        .section:nth-child(5) { animation-delay: 1.2s; }
+        .section:nth-child(6) { animation-delay: 1.5s; }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            color: #d35400;
+            border-left: 4px solid #f39c12;
+            padding-left: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            margin: 6px 0;
+            color: #444;
+            font-size: 15px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 16px;
+            }
+
+            .info p {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 20px 15px;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>विवाह हेतु बायोडाटा</h1>
+
+        <div class="section">
+            <div class="section-title">व्यक्तिगत जानकारी</div>
+            <div class="info">
+                <p>नाम: रमन शर्मा</p>
+                <p>जन्मतिथि: 02 अप्रैल 2001</p>
+                <p>उम्र: 24 वर्ष (लगभग)</p>
+                <p>धर्म: हिन्दू</p>
+                <p>जाति: ब्राह्मण</p>
+                <p>गोत्र: खुद - दिगरहा, मामा - मरैया, नानी - उपाध्याय, दादी - समाधिया</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">शिक्षा</div>
+            <div class="info">
+                <p>एम.एससी. (गणित)</p>
+                <p>डी.एड.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">व्यवसाय / कार्य</div>
+            <div class="info">
+                <p>वर्तमान स्थिति: अध्ययनरत</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">परिवार की जानकारी</div>
+            <div class="info">
+                <p>दादा जी का नाम: लक्ष्मीनारायण शर्मा</p>
+                <p>पिता का नाम: बांकेलाल शर्मा</p>
+                <p>पिता का व्यवसाय: व्यवसायी</p>
+                <p>माता का नाम: सुमन शर्मा</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">संपर्क विवरण</div>
+            <div class="info">
+                <p>संपर्क व्यक्ति: पिता जी</p>
+                <p>मोबाइल नंबर: 8839369880</p>
+                <p>पता: एम.एस. रोड, न्यू कोर्ट के पास, जवाहर नगर, जौरा, मुरैना, मध्य प्रदेश</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
