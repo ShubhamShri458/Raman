@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>विवाह हेतु बायोडाटा</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .section-title {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+    .info p {
+      margin: 5px 0;
+    }
+    input[type="text"] {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      background: transparent;
+      font-size: 1em;
+      padding: 2px 5px;
+      width: 60%;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    .buttons button {
+      margin-right: 10px;
+      padding: 8px 12px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main id="biodata">
+    <h1 id="main-title">विवाह हेतु बायोडाटा</h1><section>
+  <div class="section-title" data-hi="व्यक्तिगत जानकारी" data-en="Personal Information">व्यक्तिगत जानकारी</div>
+  <div class="info">
+    <p><span data-hi="पूरा नाम" data-en="Full Name">पूरा नाम</span>: <input type="text" value=""></p>
+    <p><span data-hi="जन्म तिथि" data-en="Date of Birth">जन्म तिथि</span>: <input type="text" value=""></p>
+    <p><span data-hi="उम्र" data-en="Age">उम्र</span>: <input type="text" value=""></p>
+    <p><span data-hi="धर्म" data-en="Religion">धर्म</span>: <input type="text" value=""></p>
+    <p><span data-hi="जाति" data-en="Caste">जाति</span>: <input type="text" value=""></p>
+    <p><span data-hi="शिक्षा" data-en="Education">शिक्षा</span>: <input type="text" value=""></p>
+    <p><span data-hi="पेशा" data-en="Occupation">पेशा</span>: <input type="text" value=""></p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title" data-hi="पारिवारिक विवरण" data-en="Family Details">पारिवारिक विवरण</div>
+  <div class="info">
+    <p><span data-hi="पिता का नाम" data-en="Father's Name">पिता का नाम</span>: <input type="text" value=""></p>
+    <p><span data-hi="माता का नाम" data-en="Mother's Name">माता का नाम</span>: <input type="text" value=""></p>
+    <p><span data-hi="भाई/बहन" data-en="Siblings">भाई/बहन</span>: <input type="text" value=""></p>
+    <p><span data-hi="पता" data-en="Address">पता</span>: <input type="text" value=""></p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title" data-hi="संपर्क जानकारी" data-en="Contact Information">संपर्क जानकारी</div>
+  <div class="info">
+    <p><span data-hi="मोबाइल नंबर" data-en="Mobile Number">मोबाइल नंबर</span>: <input type="text" value=""></p>
+    <p><span data-hi="ईमेल" data-en="Email">ईमेल</span>: <input type="text" value=""></p>
+  </div>
+</section>
+
+  </main>  <div class="buttons">
+    <button onclick="downloadPDF()">PDF डाउनलोड करें</button>
+    <button onclick="downloadWord()">Word डाउनलोड करें</button>
+    <button id="langBtn" onclick="toggleLanguage()">Convert to English</button>
+  </div>  <script>
+    let isHindi = true;
+
+    function downloadPDF() {
+      const element = document.getElementById('biodata');
+      html2pdf().from(element).set({
+        margin: 0.5,
+        filename: isHindi ? 'बायोडाटा.pdf' : 'Biodata.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+      }).save();
+    }
+
+    function downloadWord() {
+      const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Document</title></head><body>";
+      const footer = "</body></html>";
+      const sourceHTML = header + document.getElementById("biodata").innerHTML + footer;
+      const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+      const fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = isHindi ? "बायोडाटा.doc" : "Biodata.doc";
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    }
+
+    function toggleLanguage() {
+      const titles = document.querySelectorAll('[data-hi]');
+      titles.forEach(el => {
+        el.textContent = isHindi ? el.getAttribute('data-en') : el.getAttribute('data-hi');
+      });
+
+      document.getElementById('main-title').textContent = isHindi ? "Biodata for Marriage" : "विवाह हेतु बायोडाटा";
+      document.getElementById('langBtn').textContent = isHindi ? "Convert to Hindi" : "Convert to English";
+
+      isHindi = !isHindi;
+    }
+  </script></body>
+</html>
